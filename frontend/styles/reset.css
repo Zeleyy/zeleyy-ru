@@ -1,0 +1,55 @@
+:where(
+    body, h1, h2, h3, h4, h5, h6,
+    form, label, input, textarea, button,
+    a, div, p, span, section, main,
+    audio
+) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding: var(--spacing-xl) 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, textarea, select {
+    font-family: inherit;
+    color: inherit;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 var(--spacing-md);
+}
