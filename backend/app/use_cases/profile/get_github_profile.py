@@ -3,7 +3,7 @@ from app.schemas.response.github import GithubProfile
 from app.exceptions import CacheExpiredError
 from app.utils.base import validate_date
 from app.utils.file import extract_data, read_json_from_disk
-from app.utils.request import get_github_profile
+from app.utils.request import fetch_and_save_github_profile
 
 async def get_github_profile_use_case() -> GithubProfile:
     try:
@@ -15,6 +15,9 @@ async def get_github_profile_use_case() -> GithubProfile:
             raise CacheExpiredError('Кеш устарел')
 
         return GithubProfile.model_validate(profile_data)
-    except (FileNotFoundError, CacheExpiredError):
-        data = await get_github_profile()
+    except FileNotFoundError:
+        data = await fetch_and_save_github_profile()
+        return GithubProfile.model_validate(data)
+    except CacheExpiredError:
+        data = await fetch_and_save_github_profile(data)
         return GithubProfile.model_validate(data)

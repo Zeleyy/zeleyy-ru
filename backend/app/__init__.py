@@ -6,8 +6,9 @@ from .api import setup_api
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_DIR_NAME = "static"
+GITHUB_DIR_NAME = "github"
 STATIC_DIR = BASE_DIR / STATIC_DIR_NAME
-GITHUB_DIR = STATIC_DIR / "github"
+GITHUB_DIR = STATIC_DIR / GITHUB_DIR_NAME
 
 
 def init_dirs():

@@ -9,7 +9,7 @@ router = APIRouter(prefix="/profiles", tags=["Profiles"])
 logger = logging.getLogger(__name__)
 
 @router.get("/github", response_model=GithubProfile)
-async def get_github_profile():
+async def fetch_and_save_github_profile():
     try:
         return await get_github_profile_use_case()
     except Exception as e:
@@ -21,7 +21,7 @@ async def get_github_profile():
 
 
 @router.get("/github/repos", response_model=list[GithubRepo])
-async def get_github_repos():
+async def fetch_and_save_github_repos():
     try:
         return await get_github_repos_use_case()
     except Exception as e:

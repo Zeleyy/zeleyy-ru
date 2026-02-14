@@ -3,7 +3,7 @@ from app.schemas.response.github import GithubRepo
 from app.exceptions import CacheExpiredError
 from app.utils.base import validate_date
 from app.utils.file import extract_data, read_json_from_disk
-from app.utils.request import get_github_repos
+from app.utils.request import fetch_and_save_github_repos
 
 async def get_github_repos_use_case() -> list[GithubRepo]:
     try:
@@ -16,5 +16,5 @@ async def get_github_repos_use_case() -> list[GithubRepo]:
 
         return [GithubRepo.model_validate(repo) for repo in repos_data]
     except (FileNotFoundError, CacheExpiredError):
-        data = await get_github_repos()
+        data = await fetch_and_save_github_repos()
         return [GithubRepo.model_validate(repo) for repo in data]
