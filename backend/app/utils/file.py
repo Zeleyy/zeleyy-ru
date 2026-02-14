@@ -5,7 +5,7 @@ from typing import Any, Optional
 from pathlib import Path
 from datetime import datetime
 
-from app import DATA_DIR
+from app import STATIC_DIR
 
 
 def add_meta(data: dict | list) -> dict:
@@ -27,7 +27,7 @@ async def save_bytes_to_disk(
     folder_name: str,
     file_name: str,
 ) -> Path:
-    file_path = DATA_DIR / folder_name / file_name
+    file_path = STATIC_DIR / folder_name / file_name
 
     async with aiofiles.open(file_path, 'wb') as f:
         await f.write(content)
@@ -36,7 +36,7 @@ async def save_bytes_to_disk(
 
 
 async def read_json_from_disk(folder_name: str, file_name: str) -> dict:
-    file_path = DATA_DIR / folder_name / file_name
+    file_path = STATIC_DIR / folder_name / file_name
 
     async with aiofiles.open(file_path, 'r', encoding='utf-8') as f:
         content = await f.read()

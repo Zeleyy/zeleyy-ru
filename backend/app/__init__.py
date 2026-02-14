@@ -5,15 +5,16 @@ from pathlib import Path
 from .api import setup_api
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-DATA_DIR = BASE_DIR / "data"
-GITHUB_DIR = DATA_DIR / "github"
+STATIC_DIR_NAME = "static"
+STATIC_DIR = BASE_DIR / STATIC_DIR_NAME
+GITHUB_DIR = STATIC_DIR / "github"
 
 
 def init_dirs():
-    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    STATIC_DIR.mkdir(parents=True, exist_ok=True)
     GITHUB_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def setup_app(app: FastAPI):
-    app.mount("/data", StaticFiles(directory=DATA_DIR), name="data")
+    app.mount(f"/{STATIC_DIR_NAME}", StaticFiles(directory=STATIC_DIR), name=STATIC_DIR_NAME)
     setup_api(app)
