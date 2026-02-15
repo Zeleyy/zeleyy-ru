@@ -21,39 +21,41 @@
 
     <main>
         <div class="container center">
-            <div class="card github">
-                <div class="github__header">
-                    <img
-                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                        id="github-avatar"
-                        alt="GitHub Avatar"
-                        class="github__avatar"
-                    >
-                    <div class="github__user">
-                        <h3 id="github-login" class="github__login"></h3>
-                        <a href="" id="github-profile-link" class="github__link" target="_blank"></a>
+            <div class="card">
+                <div class="github github--loading" id="github-card">
+                    <div class="github__header">
+                        <img
+                            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                            id="github-avatar"
+                            alt="GitHub Avatar"
+                            class="github__avatar"
+                        >
+                        <div class="github__user">
+                            <h3 id="github-login" class="github__login"></h3>
+                            <a href="" id="github-profile-link" class="github__link" target="_blank"></a>
+                        </div>
                     </div>
-                </div>
-
-                <div class="github__stats">
-                    <div class="github__stat">
-                        <span id="repos-count" class="github__stat-count"></span>
-                        <span class="github__stat-label">репозиториев</span>
+    
+                    <div class="github__stats">
+                        <div class="github__stat">
+                            <span id="repos-count" class="github__stat-count"></span>
+                            <span class="github__stat-label">репозиториев</span>
+                        </div>
+                        <div class="github__stat">
+                            <span id="followers-count" class="github__stat-count"></span>
+                            <span class="github__stat-label">подписчиков</span>
+                        </div>
+                        <div class="github__stat">
+                            <span id="following-count" class="github__stat-count"></span>
+                            <span class="github__stat-label">подписок</span>
+                        </div>
                     </div>
-                    <div class="github__stat">
-                        <span id="followers-count" class="github__stat-count"></span>
-                        <span class="github__stat-label">подписчиков</span>
-                    </div>
-                    <div class="github__stat">
-                        <span id="following-count" class="github__stat-count"></span>
-                        <span class="github__stat-label">подписок</span>
-                    </div>
-                </div>
-
-                <div class="github__repos">
-                    <h4 class="github__repos-title">Репозитории</h4>
-                    <div id="github-repos-container" class="github__repos-list">
-                        <!-- Заполняется динамически -->
+    
+                    <div class="github__repos">
+                        <h4 class="github__repos-title">Репозитории</h4>
+                        <div id="github-repos-container" class="github__repos-list">
+                            <!-- Заполняется динамически -->
+                        </div>
                     </div>
                 </div>
             </div>

@@ -16,6 +16,8 @@ const fetchProfile = async () => {
 };
 
 export const initGithubProfile = async () => {
+    const githubCard = document.getElementById('github-card');
+
     try {
         const data = await fetchProfile();
         const githubAvatar = document.getElementById('github-avatar');
@@ -35,5 +37,7 @@ export const initGithubProfile = async () => {
         githubFollowingCount.textContent = data.following;
     } catch (error) {
         console.error('Error fetching profile:', error);
+    } finally {
+        githubCard.classList.remove('github--loading');
     }
 };
