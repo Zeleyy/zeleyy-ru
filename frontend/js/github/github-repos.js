@@ -42,7 +42,7 @@ const renderGithubRepos = async (repos) => {
 
     container.innerHTML = repos.map(repo => `
         <div class="github__repo">
-            <a href="${repo.html_url}" class="github__link" target="_blank">${repo.name}</a>
+            <a href="${repo.html_url}" class="github__link" target="_blank" rel="noopener noreferrer">${repo.name}</a>
             <span class="github__repo-desc">${repo.description || ''}</span>
             <div class="github__repo-stats">
                 <span class="github__repo-lang">
