@@ -1,0 +1,46 @@
+:root {
+    --wave-gradient: linear-gradient(90deg,
+        var(--color-loading-wave-low) 0%,
+        var(--color-loading-wave-high) 50%,
+        var(--color-loading-wave-low) 100%);
+}
+
+.github--loading {
+    position: relative;
+}
+
+.github--loading .github__avatar,
+.github--loading .github__login,
+.github--loading .github__link,
+.github--loading .github__stat-count {
+    background: var(--wave-gradient);
+    background-size: 200% 100%;
+    animation: loading 1.5s linear infinite;
+}
+
+.github--loading .github__login {
+    max-width: 120px;
+    height: 32px;
+    border-radius: var(--border-radius-sm);
+}
+
+.github--loading .github__link {
+    max-width: 150px;
+    height: 20px;
+    border-radius: var(--border-radius-sm);
+}
+
+.github--loading .github__stat-count {
+    width: 22px;
+    height: 24px;
+    border-radius: var(--border-radius-sm);
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
