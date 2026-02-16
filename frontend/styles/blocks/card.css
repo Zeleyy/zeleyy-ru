@@ -7,6 +7,7 @@
         0 0 2px var(--color-primary),
         0 0 10px var(--color-primary);
     position: relative;
+    overflow: hidden;
 }
 
 .github {
@@ -16,7 +17,6 @@
     padding: var(--spacing-xl);
     background-color: var(--color-github-background);
     color: var(--color-github-text);
-    border-radius: var(--border-radius-md);
 }
 
 .github__header {
