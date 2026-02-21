@@ -12,7 +12,8 @@
 .github--loading .github__avatar,
 .github--loading .github__login,
 .github--loading .github__link,
-.github--loading .github__stat-count {
+.github--loading .github__stat-count,
+.github__repo--loading {
     background: var(--wave-gradient);
     background-size: 200% 100%;
     animation: loading 1.5s linear infinite;
@@ -33,6 +34,11 @@
 .github--loading .github__stat-count {
     width: 22px;
     height: 24px;
+    border-radius: var(--border-radius-sm);
+}
+
+.github__repo--loading {
+    min-height: 77px;
     border-radius: var(--border-radius-sm);
 }
 
