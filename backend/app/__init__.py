@@ -6,15 +6,18 @@ from .api import setup_api
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_DIR_NAME = "static"
+FAVICON_DIR_NAME = "favicon"
 GITHUB_DIR_NAME = "github"
 VALORANT_DIR_NAME = "valorant"
 STATIC_DIR = BASE_DIR / STATIC_DIR_NAME
+FAVICON_DIR = STATIC_DIR / FAVICON_DIR_NAME
 GITHUB_DIR = STATIC_DIR / GITHUB_DIR_NAME
 VALORANT_DIR = STATIC_DIR / VALORANT_DIR_NAME
 
 
 def init_dirs():
     STATIC_DIR.mkdir(parents=True, exist_ok=True)
+    FAVICON_DIR.mkdir(parents=True, exist_ok=True)
     GITHUB_DIR.mkdir(parents=True, exist_ok=True)
     VALORANT_DIR.mkdir(parents=True, exist_ok=True)
 
