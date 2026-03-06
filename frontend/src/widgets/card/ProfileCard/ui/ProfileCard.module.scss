@@ -1,0 +1,9 @@
+.profileCard {
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-primary);
+    box-shadow:
+        0 0 2px var(--color-primary),
+        0 0 10px var(--color-primary);
+    position: relative;
+    overflow: hidden;
+}

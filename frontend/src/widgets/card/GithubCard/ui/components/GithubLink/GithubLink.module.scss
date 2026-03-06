@@ -1,0 +1,11 @@
+.githubLink {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-github-link);
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

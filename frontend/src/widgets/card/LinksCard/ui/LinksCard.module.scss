@@ -1,0 +1,18 @@
+.linksCard {
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-background-elevated);
+    padding: var(--spacing-xl);
+
+    &__title {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    &__item {
+        font-size: 1.1rem;
+
+        &:hover {
+            color: var(--color-primary);
+        }
+    }
+}

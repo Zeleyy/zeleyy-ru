@@ -1,0 +1,1 @@
+export { getLanguageColor } from "./getLanguageColor";

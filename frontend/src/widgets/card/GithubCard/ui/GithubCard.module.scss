@@ -1,0 +1,89 @@
+.github {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-xl);
+    background-color: var(--color-github-background);
+    color: var(--color-github-text);
+
+    @media (max-width: 600px) {
+        padding: var(--spacing-lg);
+    }
+
+    @media (max-width: 320px) {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    &__header {
+        display: flex;
+        gap: var(--spacing-md);
+    }
+
+    &__avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: var(--border-radius-full);
+        border: 2px solid var(--color-github-border);
+        flex-shrink: 0;
+
+        @media (max-width: 360px) {
+            width: 120px;
+            height: 120px;
+        }
+    }
+
+    &__user {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    &__stats {
+        display: flex;
+        gap: var(--spacing-xl);
+        flex-wrap: wrap;
+        padding: var(--spacing-md) 0;
+        border-top: 1px solid var(--color-github-border);
+        border-bottom: 1px solid var(--color-github-border);
+    }
+
+    &__stat {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        &Count {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        &Label {
+            font-size: 14px;
+            color: var(--color-github-text-secondary);
+        }
+    }
+
+    &__repos {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+
+        &Title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-github-text);
+        }
+
+        &List {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-md);
+
+            @media (max-width: 412px) {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}

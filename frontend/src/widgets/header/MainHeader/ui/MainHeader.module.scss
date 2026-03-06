@@ -1,0 +1,43 @@
+.header {
+    position: sticky;
+    backdrop-filter: blur(8px);
+    background-color: color-mix(in srgb, var(--color-background) 25%, transparent);
+    min-height: 50px;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+
+    
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        color: var(--color-primary);
+    }
+
+    &__toggle {
+        position: relative;
+        height: 35px;
+        width: 35px;
+        border: 1px solid var(--color-text);
+        background: transparent;
+        cursor: pointer;
+        font-size: 20px;
+        transition: all var(--transition-normal);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--border-radius-md);
+
+        &:hover,
+        &:active {
+            color: var(--color-primary);
+            border-color: var(--color-primary);
+        }
+    }
+}
