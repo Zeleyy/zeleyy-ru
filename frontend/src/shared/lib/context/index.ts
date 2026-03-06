@@ -1,1 +1,1 @@
-export { ThemeContext } from "./ThemeContext";
+export { ThemeContext, type ThemeContextProps } from "./ThemeContext";
