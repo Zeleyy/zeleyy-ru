@@ -1,1 +1,1 @@
-export { GithubRepo, type GithubRepoProps } from "./GithubRepo";
+export { GithubRepo } from "./GithubRepo";
