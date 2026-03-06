@@ -2,15 +2,10 @@ import styles from "./GithubRepo.module.scss";
 import { Flex } from "@/shared/ui";
 import { getLanguageColor } from "../../../lib/utils";
 import { GithubLink } from "../GithubLink";
+import type { GithubRepoModel } from "../../../model/types";
 
-export interface GithubRepoProps {
-    name?: string;
-    html_url?: string;
-    description?: string;
-    language?: string;
-}
 
-export const GithubRepo = (props: GithubRepoProps) => {
+export const GithubRepo = (props: GithubRepoModel) => {
     const {
         name,
         html_url,

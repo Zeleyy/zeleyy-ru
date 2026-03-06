@@ -1,34 +1,13 @@
 import styles from "./GithubCard.module.scss";
 import { ProfileCard } from "../../ProfileCard";
 import { Skeleton } from "@/shared/ui";
-import { useQuery } from "@tanstack/react-query";
-import { GithubLink, GithubRepo, type GithubRepoProps } from "./components";
+import { GithubLink, GithubRepo } from "./components";
+import { useGithubProfile, useGithubRepos } from "../hooks";
 
-interface GithubProfileResponse {
-    login: string;
-    avatar_url: string;
-    html_url: string;
-    public_repos: number;
-    followers: number;
-    following: number;
-}
 
 export const GithubCard = () => {
-    const { data: profile, isLoading } = useQuery<GithubProfileResponse>({
-        queryKey: ["github", "profile"],
-        queryFn: async () => {
-            let response = await fetch("/api/v1/profiles/github");
-            return await response.json().catch(() => ({}));
-        },
-    });
-
-    const { data: repos, isLoading: isLoadingRepos } = useQuery<GithubRepoProps[]>({
-        queryKey: ["github", "repos"],
-        queryFn: async () => {
-            let response = await fetch("/api/v1/profiles/github/repos");
-            return await response.json().catch(() => ({}));
-        },
-    });
+    const { data: profile, isLoading } = useGithubProfile();
+    const { data: repos, isLoading: isLoadingRepos } = useGithubRepos()
 
     return (
         <ProfileCard>
