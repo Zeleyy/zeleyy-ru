@@ -22,6 +22,7 @@ interface FlexProps {
     container?: boolean;
     mt?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     mb?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+    fullWidth?: boolean;
 }
 
 export const Flex = (props: FlexProps) => {
@@ -38,6 +39,7 @@ export const Flex = (props: FlexProps) => {
         container,
         mt,
         mb,
+        fullWidth,
     } = props;
 
     const classNames = clsx(
@@ -53,6 +55,7 @@ export const Flex = (props: FlexProps) => {
             [styles['flex--container']]: container,
             [styles[`flex--mt-${mt}`]]: mt,
             [styles[`flex--mb-${mb}`]]: mb,
+            [styles['flex--full-width']]: fullWidth,
         },
 
         className,

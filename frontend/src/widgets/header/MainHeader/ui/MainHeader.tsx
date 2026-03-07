@@ -7,7 +7,7 @@ export const MainHeader = () => {
 
     return (
         <header className={styles.header}>
-            <Flex size="page-md" className={styles.header__content} container>
+            <Flex size="page-md" className={styles.header__content} container fullWidth>
                 <h2 className={styles.header__title}>Zeleyy</h2>
                 <button
                     id="theme-toggle"

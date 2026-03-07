@@ -10,7 +10,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
     const { children } = props;
 
     return (
-        <Flex size="form-sm" className={styles.profileCard} direction="column">
+        <Flex size="form-sm" className={styles.profileCard} direction="column" fullWidth>
             {children}
         </Flex>
     );

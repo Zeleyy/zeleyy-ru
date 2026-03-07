@@ -6,7 +6,6 @@ $xl: #{var(--spacing-xl)};
 
 .flex {
     display: flex;
-    width: 100%;
 
     &--direction-row { flex-direction: row; }
     &--direction-column { flex-direction: column; }
@@ -57,4 +56,6 @@ $xl: #{var(--spacing-xl)};
     &--mb-md { margin-bottom: $md; }
     &--mb-lg { margin-bottom: $lg; }
     &--mb-xl { margin-bottom: $xl; }
+
+    &--full-width { width: 100%; }
 }
