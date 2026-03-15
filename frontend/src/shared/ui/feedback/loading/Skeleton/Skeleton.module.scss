@@ -4,10 +4,10 @@
     animation: loading 1.5s linear infinite;
     flex-shrink: 0;
 
-    &--sm { border-radius: var(--border-radius-sm); }
-    &--md { border-radius: var(--border-radius-md); }
-    &--lg { border-radius: var(--border-radius-lg); }
-    &--full { border-radius: var(--border-radius-full); }
+    &--radius-sm { border-radius: var(--border-radius-sm); }
+    &--radius-md { border-radius: var(--border-radius-md); }
+    &--radius-lg { border-radius: var(--border-radius-lg); }
+    &--radius-full { border-radius: var(--border-radius-full); }
 }
 
 @keyframes loading {

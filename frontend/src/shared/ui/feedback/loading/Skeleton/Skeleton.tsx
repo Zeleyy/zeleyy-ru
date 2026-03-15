@@ -1,30 +1,30 @@
-import styles from './Skeleton.module.scss';
-import type { ReactNode } from 'react';
-import clsx from 'clsx';
+import styles from "./Skeleton.module.scss";
+import clsx from "clsx";
+
+type SkeletonRadius = 'sm' | 'md' | 'lg' | 'full';
 
 interface SkeletonProps {
-    className?: ReactNode;
+    className?: string;
     width?: string | number;
     height?: string | number;
     maxWidth?: string | number;
     maxHeight?: string | number;
-    radius?: string;
-};
+    radius?: SkeletonRadius;
+}
 
-export const Skeleton = (props: SkeletonProps) => {
-    const {
-        className,
-        width,
-        height,
-        maxWidth,
-        maxHeight,
-        radius,
-    } = props;
-
+export const Skeleton = ({
+    className,
+    width,
+    height,
+    maxWidth,
+    maxHeight,
+    radius,
+    ...rest
+}: SkeletonProps) => {
     const classNames = clsx(
         styles.skeleton,
         {
-            [styles[`skeleton--${radius}`]]: radius,
+            [styles[`skeleton--radius-${radius}`]]: radius,
         },
         className,
     );
@@ -40,6 +40,7 @@ export const Skeleton = (props: SkeletonProps) => {
         <div
             className={classNames}
             style={style}
+            {...rest}
         />
     );
 };
